@@ -1,0 +1,11 @@
+a=("eu sou um pythonista de plantao")
+b=a.split()
+c=len(b)
+d=0
+
+for i in b:
+  d+=len(i)
+
+e=d/c
+
+print('{:.1f}'.format(e))
