@@ -1,0 +1,26 @@
+DICIONARIOS
+
+Dictionaries are used to store data values in key:value pairs.
+
+A dictionary is a collection which is ordered*, changeable and does not allow duplicates.
+
+Formato:
+a={}
+a={key:value}
+
+Exemplo de dicionario:
+a={Nome:"Raquel",Idade:27,Nacionalidade:"brasileira"}
+
+
+Métodos para dicionarios:
+a.keys()
+print(a.keys())
+dict_keys(['Nome','Idade','Nacionalidade'])
+
+a.values()
+print(a.values())
+dict_values(['Raquel', 27, 'brasileira'])
+
+a.items()
+print(a.items())
+dict_values([('Nome','Raquel'),('Idade',27),('Nacionalidade','brasileira')])

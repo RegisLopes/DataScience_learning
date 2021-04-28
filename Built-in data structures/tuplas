@@ -1,0 +1,10 @@
+TUPLAS
+
+Tupla é uma lista que nao pode ser alterada, ocupam menos memória e sao mais rápidas e mais seguras do que listas.
+
+Formato:
+a=()
+
+Exemplo de tupla:
+a=(1,4,3,6)
+

@@ -1,4 +1,4 @@
-a=("eu sou um pythonista de plantao")
+a=("esse é um exemplo de como usar o format")
 b=a.split()
 c=len(b)
 d=0

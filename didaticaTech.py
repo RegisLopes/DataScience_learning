@@ -2,15 +2,6 @@
 
 #tupla é uma lista que nao pode ser alterada, ocupam menos memória e sao mais rápidas e mais seguras do que listas.
 
-#sets sao uma colacao de itens unicos, entre chaves. Nao pode contem itens duplicados. Operacoes matematicas dos sets:
-#a={0,2,4,6,8,10,100}
-#b={1,3,5,7,9,13,100}
-#print(a|b,"\n")
-#print(a&b,"\n")
-#print(a-b,"\n")
-#print(b-a,"\n")
-#print(a^b,"\n")
-
 def exe1():
 #Exercício 1 (Aula3)   
   x_i=[]
