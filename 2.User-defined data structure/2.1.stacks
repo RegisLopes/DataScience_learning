@@ -11,18 +11,119 @@ print_stack
 
 Creating a stack using a list:
 
-class Stack:
+class Stack():
+  
   def __init__(self):
-    self.items=[]
+    self.a = []
   
   def is_empty(self):
-    return self.items==[]
+    return self.a == []
   
-  def push(self,item):
-    self.items.insert(0,item)
+  def push_item(self,value):
+    self.a.append(value)
+  
+  def pop_item(self):
+    if self.is_empty():
+      print('Stack is empty')
+    return self.a.pop()
+  
+  def peek(self):
+    if self.is_empty():
+      print('Stack is empty')
+    return self.a[-1]
+  
+  def size(self):
+    return len(self.a)
+  
+  def display(self):
+    print(self.a)
 
-  def pop(self):
-    return self.item.pop(0)
 
-  def print_stack(self):
-    print(self.items)  
+x=Stack()
+
+print(x.is_empty())
+x.push_item(1)
+x.push_item(2)
+x.push_item(5)
+x.push_item(8)
+x.display()
+x.pop_item()
+x.display()
+print(x.is_empty())
+
+#https://www.youtube.com/watch?v=z2Vs8iRMmEs
+
+############################################################
+
+exemple 2:
+
+# Python program to demonstrate
+# stack implementation using a linked list.
+# node class
+class Node:
+   def __init__(self, value):
+      self.value = value
+      self.next = None
+ 
+class Stack:
+    
+   # Initializing a stack.
+   # Use a dummy node, which is
+   # easier for handling edge cases.
+   def __init__(self):
+      self.head = Node("head")
+      self.size = 0
+ 
+   # String representation of the stack
+   def __str__(self):
+      cur = self.head.next
+      out = ""
+      while cur:
+         out += str(cur.value) + "->"
+         cur = cur.next
+      return out[:-3]  
+ 
+   # Get the current size of the stack
+   def getSize(self):
+      return self.size
+    
+   # Check if the stack is empty
+   def isEmpty(self):
+      return self.size == 0
+    
+   # Get the top item of the stack
+   def peek(self):
+       
+      # Sanitary check to see if we
+      # are peeking an empty stack.
+      if self.isEmpty():
+         raise Exception("Peeking from an empty stack")
+      return self.head.next.value
+ 
+   # Push a value into the stack.
+   def push(self, value):
+      node = Node(value)
+      node.next = self.head.next
+      self.head.next = node
+      self.size += 1
+      
+   # Remove a value from the stack and return.
+   def pop(self):
+      if self.isEmpty():
+         raise Exception("Popping from an empty stack")
+      remove = self.head.next
+      self.head.next = self.head.next.next
+      self.size -= 1
+      return remove.value
+ 
+# Driver Code
+if __name__ == "__main__":
+   stack = Stack()
+   for i in range(1, 11):
+      stack.push(i)
+   print(f"Stack: {stack}")
+ 
+   for _ in range(1, 6):
+      remove = stack.pop()
+      print(f"Pop: {remove}")
+   print(f"Stack: {stack}")

@@ -1,0 +1,99 @@
+How to define a function
+
+def anyfunction():
+
+------------------------------------------------------
+Exemples:
+------------------------------------------------------
+example 1: 
+everytime this function is called, "Very good" is printed
+
+def function1():
+  print("Very good!")
+
+------------------------------------------------------
+example 2: 
+everytime this function is called and the argument "a" receives a value entered by the user, whatever value was inserted will be printed
+
+def function2(a):
+  print(a)
+function("Very bad")
+------------------------------------------------------
+example 3: 
+everytime this function is called and the arguments "a" and "b" receive a value entered by the user, the sum of the values will be printed
+
+def function3(a,b):
+  print("Soma:",a+b)
+function(3,5)
+------------------------------------------------------
+example 4: 
+everytime this function is called and the arguments "a" and "b" receive a value entered by the user, the sum of the values will be printed. But if no value is entered, then by default both will arguments are 0 and the sum will be 0.
+
+def function4(a=0,b=0):
+  print("Soma:",a+b)
+function(3,5)
+------------------------------------------------------
+GLOBAL AND LOCAL SCOPE OF A VARIABLE
+
+example 5:
+A variable can have a local or a global escope
+-Local scope: variable b
+-Global escope: variable a
+
+def test(b):
+  b=a+b
+  print(b)
+
+a=int(input())
+test(a)
+
+If you want a function to change a variable of global scope, do the following:
+
+def test(b):
+  global a
+  a=2 (or a=input()...)
+  b=a+b
+  print('b:',b)
+  print('a:',a)
+
+a=int(input())
+test(a)
+------------------------------------------------------
+DOCSTRINGS
+
+A text that is printed from inside a function, requires a triple "
+
+example 5:
+
+def anyfunction(a,b):
+"""
+A soma resulta em:
+"""
+  print(a+b)
+------------------------------------------------------
+RETURN
+
+attributes the desired values to the arguments of a function without printing anything.
+
+example 5: Here soma() will always have saved the variable "s" containing the sum of "a" and "b"
+
+def soma(a=0,b=0):
+  s=a+b
+  return s
+
+r1=soma(1,2)
+r2=soma(99,3)
+print(f'Os resultados foram {r1} e {r2}')
+------------------------------------------------------
+
+Clarification on single and double underscores
+
+__foo__: this is just a convention, a way for the Python system to use names that won't conflict with user names.
+
+_foo: this is just a convention, a way for the programmer to indicate that the variable is private (whatever that means in Python).
+
+__foo: this has real meaning: the interpreter replaces this name with _classname__foo as a way to ensure that the name will not overlap with a similar name in another class.
+
+No other form of underscores have meaning in the Python world.
+
+There's no difference between class, variable, global, etc in these conventions

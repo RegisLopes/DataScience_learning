@@ -1,0 +1,42 @@
+In order to not just simply receive a red error alarming text on the screen, it is possible to print a texto and refer to the error:
+
+try:
+  a=int(input('1st Number: '))
+  b=int(input('2nd Number: '))
+  r=a/b
+execpt:
+  print('Unfortunately we have a problem, and we presume that the second number is invalid for a division')
+else:
+  print(f'The devision result is: {r:.1f}')
+finally:
+  print('Thanks for your participation')
+
+This is useful for operations where there is a potential for error.
+------------------------------------------------
+And it can get even better if you do this:
+Note that "except" will show what was the class of the error. What except shows can be chosen among many options.
+
+try:
+  a=int(input('1st Number: '))
+  b=int(input('2nd Number: '))
+  r=a/b
+except Exception as erro:
+  print('Unfortunately we have a problem. The error detected was: {erro.__class__'})
+else:
+  print(f'The devision result is: {r:.1f}')
+finally:
+  print('Thanks for your participation')
+------------------------------------------------
+And still better:
+You can programme messages for common mistakes that can be predicted, helping the user to understand the root of the problem.
+
+try:
+  a=int(input('1st Number: '))
+  b=int(input('2nd Number: '))
+  r=a/b
+except ZeroDivisionError:
+  print('It is not possible to divide a number by zero!')
+else:
+  print(f'The devision result is: {r:.1f}')
+finally:
+  print('Thanks for your participation')
