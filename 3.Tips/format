@@ -11,3 +11,5 @@ for i in b:
 e=d/c
 
 print('{:.1f}'.format(e))
+
+https://realpython.com/python-f-strings/

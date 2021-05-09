@@ -1,0 +1,92 @@
+Lambda and anonymous functions constrast with normal functions, 
+
+Lambda functions are regularly used with the built-in functions map() and filter(), as well as functools.reduce(), exposed in the module functools.
+
+
+Here are some examples:
+
+
+#
+#
+###########
+#Example 0:
+#map()
+list(map(lambda x: x.upper(), ['cat', 'dog', 'cow']))
+['CAT', 'DOG', 'COW']
+
+#filter()
+list(filter(lambda x: 'o' in x, ['cat', 'dog', 'cow']))
+['dog', 'cow']
+
+#reduce()
+from functools import reduce
+reduce(lambda acc, x: f'{acc} | {x}', ['cat', 'dog', 'cow'])
+'cat | dog | cow
+###########
+#
+#
+###########
+#Example 1: a function that calculates the square value of a given number
+
+sqs = lambda x:x**2
+
+print(sqs(int(input())))
+#####VS#####
+def sqs(x):
+ squares=x**2
+ return squares
+
+print(sqs(int(input())))
+###########
+#
+#
+###########
+#Example 2:
+
+y=(lambda x:x+2)(int(input()))
+print(y)
+###########
+#
+#
+###########
+#Example 3: How to correct the free variable "n" by making it time related
+
+#Incorrect:
+numbers = 'one', 'two', 'three'
+funcs = []
+for n in numbers:
+  funcs.append(lambda: print(n))
+
+for f in funcs:
+  f()
+
+#Correct:
+numbers = 'one', 'two', 'three'
+funcs = []
+for n in numbers:
+  funcs.append(lambda n=n: print(n))
+
+for f in funcs:
+  f()
+###########
+#
+#
+###########
+#EXAMPLE 4: Testing a lambda function:
+
+addtwo = lambda x: x + 2
+addtwo.__doc__ = """Add 2 to a number.
+   >>> addtwo(2)
+   4
+   >>> addtwo(2.2)
+   4.2
+   >>> addtwo(3) # Should fail
+   6
+   """
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod(verbose=True)
+###########
+#
+#

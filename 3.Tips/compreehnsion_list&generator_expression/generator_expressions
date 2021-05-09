@@ -1,0 +1,11 @@
+#Advanced Generator Methods:
+.send()
+.throw()
+.close()
+
+
+list comprehension:
+https://realpython.com/list-comprehension-python/
+
+generator expressions:
+https://realpython.com/introduction-to-python-generators/

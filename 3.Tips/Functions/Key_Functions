@@ -1,0 +1,17 @@
+Key Functions:
+Key functions in Python are higher-order functions that take a parameter key as a named argument. key receives a function that can be a lambda. This function directly influences the algorithm driven by the key function itself. Here are some key functions:
+
+sort(): list method
+sorted(), min(), max(): built-in functions
+nlargest() and nsmallest(): in the Heap queue algorithm module heapq
+
+Example:
+#Lexicographic sort
+ids = ['id1', 'id2', 'id30', 'id3', 'id22', 'id100']
+print(sorted(ids)) 
+['id1', 'id100', 'id2', 'id22', 'id3', 'id30']
+
+#Integer sort
+sorted_ids = sorted(ids, key=lambda x: int(x[2:])) 
+print(sorted_ids)
+['id1', 'id2', 'id3', 'id22', 'id30', 'id100']

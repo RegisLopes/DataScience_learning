@@ -1,0 +1,58 @@
+import numpy
+
+or import numpy as np (this means that a nickname is being given to numpy so that everytime numpy has to be typed you can do it faster by typing np instead)
+
+#####
+Functions:
+####
+#
+#
+####
+numpy.array() or np.array
+ #Creates an array with 'n' dimensions or a matrix
+
+example:
+
+matriz2x2=np.array([(1,2),(36,99)])
+print(matriz2x2)
+####
+#
+#
+####
+numpy.zeros() or np.zeros() 
+&
+numpy.ones() or np.ones()
+example:
+
+a=np.zeros((2,4))
+print(a)
+->[[0. 0. 0. 0.]
+ [0. 0. 0. 0.]]
+
+b=np.ones((2,2))
+->[[1. 1.]
+ [ 1. 1.]]
+####
+#
+#
+####
+numpy.eye() or np.eye()
+ #Creates an identity matriz.
+ Diagonal matrix: is a square matrix where all the elements not in the main diagonal are zero. A identity  matrix is a diagonal matrix with the peculiarity that the elements of the main diagonal are 1.
+
+example:
+
+c=np.eye((3))
+print(c)
+->[[1. 0. 0.]
+   [0. 1. 0.]]
+   [0. 0. 1.]]
+####
+#
+#
+####
+np.max()
+np.min()
+np.sum()
+np.mean()
+np.std()->desvio padrao de uma matrix

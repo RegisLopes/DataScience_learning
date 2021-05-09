@@ -127,3 +127,6 @@ if __name__ == "__main__":
       remove = stack.pop()
       print(f"Pop: {remove}")
    print(f"Stack: {stack}")
+
+################################################################
+

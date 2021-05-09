@@ -1,0 +1,52 @@
+What are higher order functions?
+
+
+#examples:
+map(), filter(), and functools.reduce()
+#
+#
+####
+#examples for map(): first letter of a string capitalzed
+
+list(map(lambda x: x.capitalize(), ['cat', 'dog', 'cow']))
+['Cat', 'Dog', 'Cow']
+
+#but through list compreehnsion is more compact:
+
+[x.capitalize() for x in ['cat', 'dog', 'cow']]
+['Cat', 'Dog', 'Cow']
+####
+#
+#
+####
+#example for filter():
+
+even = lambda x: x%2 == 0
+list(filter(even, range(11)))
+output-> [0, 2, 4, 6, 8, 10]
+
+#but through list compreehnsion is more compact:
+
+[x for x in range(11) if x%2 == 0]
+output-> [0, 2, 4, 6, 8, 10]
+####
+#
+#
+####
+#example for reduce():
+
+import functools
+pairs = [(1, 'a'), (2, 'b'), (3, 'c')]
+functools.reduce(lambda acc, pair: acc + pair[0], pairs, 0)
+output-> 6
+
+#but through the use of generator expression is more compact:
+pairs = [(1, 'a'), (2, 'b'), (3, 'c')]
+sum(x[0] for x in pairs)
+output-> 6
+
+#or...:
+pairs = [(1, 'a'), (2, 'b'), (3, 'c')]
+sum(x for x, _ in pairs)
+output-> 6
+#The use of underscore (_) is a Python convention indicating that you can ignore the second value of the pair.
